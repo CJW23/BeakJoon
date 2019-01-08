@@ -1,33 +1,32 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#INCLUDE <IOSTREAM>
+#INCLUDE <VECTOR>
+#INCLUDE <ALGORITHM>
 
-using namespace std;
-vector<int> count1;
+USING NAMESPACE STD;
+VECTOR<INT> COUNT1;
 
-int f(int x) {
-	int result;
-	if (x == 1)
-		return 0;
-	if (count1[x] != -1)
-		return count1[x];
+INT F(INT X) {
+	INT RESULT;
+	IF (X == 1)
+		RETURN 0;
+	IF (COUNT1[X] != -1)
+		RETURN COUNT1[X];
 
-	result = f(x - 1) + 1;
-	if (x % 2 == 0)
-		result = min(f(x / 2) + 1, result);
-	if (x % 3 == 0)
-		result = min(f(x / 3) + 1, result);
+	RESULT = F(X - 1) + 1;
+	IF (X % 2 == 0)
+		RESULT = MIN(F(X / 2) + 1, RESULT);
+	IF (X % 3 == 0)
+		RESULT = MIN(F(X / 3) + 1, RESULT);
 
-	count1[x] = result;
-	return result;
+	COUNT1[X] = RESULT;
+	RETURN RESULT;
 }
 
-int main() {
-	int X;
-	int Y;
-	cin >> X;
-	count1.resize(X+1, -1);
-	Y = f(X);
-	cout << Y;
+INT MAIN() {
+	INT X;
+	INT Y;
+	CIN >> X;
+	COUNT1.RESIZE(X+1, -1);
+	Y = F(X);
+	COUT << Y;
 }
-
